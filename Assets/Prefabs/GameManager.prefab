@@ -1,0 +1,102 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7782161688399369353
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7782161688399369355}
+  - component: {fileID: 7782161688399369352}
+  - component: {fileID: 6988557346421015860}
+  - component: {fileID: 869866916069824807}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7782161688399369355
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7782161688399369353}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -28.100737, y: -40.360218, z: 39.313404}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7782161688399369352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7782161688399369353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b257f6cb05b2849b2aaa2be7d21820, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingDamage: 1
+  startingTimeBetweenShots: 0.1
+  startingBulletSizeMultiplier: 1
+  startingCanShootBackwards: 0
+  startingMaxGoThroughEnemy: 1
+  startingFireDuration: 0
+  startingHitDamage: 0.5
+  startingMaxSpeed: 40
+  startingSteeringSpeed: 100
+  startingMaxHealth: 10
+  startingHealthRegen: 0.1
+  startingHitProtectionTime: 1
+  startingSecondChance: 0
+  startingNumberOfDrones: 0
+  moneyStart: 25
+  upgradeCountStart: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  PlayerCanvas: {fileID: 0}
+  upgradeImages: []
+--- !u!114 &6988557346421015860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7782161688399369353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c98f19667728bf4fb103ba4050da477, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  setUpMoney: 12
+  ChestPrize: 0100000002000000
+  Chests:
+  - {fileID: 8525710537606216606, guid: 4e64928250fda4945b493fe6fec3630f, type: 3}
+  - {fileID: 7232936499617531100, guid: 697004f36fd94f447a082a57081e82df, type: 3}
+  mapSizeX: 150
+  mapSizeZ: 1
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 64
+  objetive: {fileID: 994374964883654348, guid: e8baa5d7bee34274db67d0fac77878ce, type: 3}
+  howManyObjectives: 3
+--- !u!114 &869866916069824807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7782161688399369353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e53520c68b388bc4b8e21cf9e2d8ef92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
