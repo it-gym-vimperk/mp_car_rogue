@@ -44,6 +44,11 @@ public class RandomObjective : MonoBehaviour
         {
             HoldoutObjective();
         }
+
+        if (doneObjective)
+        {
+            CompletedObjective();
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -89,17 +94,18 @@ public class RandomObjective : MonoBehaviour
                 loadCyl.transform.localScale = new Vector3(2 * loadingDistance, 0.01f, 2 * loadingDistance);
             }
         }
-        else if (doneObjective)
+    }
+
+    void CompletedObjective()
+    {
+        Arrow.SetActive(false);
+
+        foreach (GameObject objective in allObjectivesGame)
         {
-            Arrow.SetActive(false);
-
-            foreach (GameObject objective in allObjectivesGame)
-            {
-                objective.GetComponent<RandomObjective>().doingObjective = false;
-            }
-
-            Destroy(gameObject);
+            objective.GetComponent<RandomObjective>().doingObjective = false;
         }
+
+        Destroy(gameObject);
     }
 
     public void RaceObjective()
