@@ -13,6 +13,8 @@ TagManager:
   - PlayerBullet
   - PlayerCanvas
   - UpgradePanel
+  - TextPanel
+  - GameMan
   layers:
   - Default
   - TransparentFX

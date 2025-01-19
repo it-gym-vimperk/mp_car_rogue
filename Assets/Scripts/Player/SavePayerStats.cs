@@ -9,6 +9,8 @@ public class SavePayerStats : MonoBehaviour
     public static int moneySaver;
     public static bool gameStarted = false;
     public static int[] upgradeCount;
+
+    public GameObject textPanel;
     #endregion
 
     #region Stats
@@ -61,6 +63,7 @@ public class SavePayerStats : MonoBehaviour
 
     private void Awake()
     {
+        textPanel = GameObject.FindGameObjectWithTag("TextPanel");
         moneyText = GameObject.FindGameObjectWithTag("MoneyText").GetComponent<TextMeshProUGUI>();
 
         if (!gameStarted)
@@ -69,7 +72,6 @@ public class SavePayerStats : MonoBehaviour
             gameStarted = true;
         }
     }
-
     private void Start()
     {
         PlayerCanvas = GameObject.FindGameObjectWithTag("UpgradePanel");

@@ -13,7 +13,7 @@ public class EnemyBulletScript : MonoBehaviour
             other.GetComponent<PlayerHealthManager>().PlayerDecreaseHealth(damage);
         }
 
-        if (Physics.CheckSphere(transform.position, 0.1f, obsticleMask))
+        if (Physics.CheckSphere(other.transform.position, 0.1f, obsticleMask))
         {
             Destroy(gameObject);
         }

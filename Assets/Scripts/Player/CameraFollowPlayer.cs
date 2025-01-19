@@ -28,7 +28,7 @@ public class CameraFollowPlayer : MonoBehaviour
 
         Debug.Log(direction);
 
-        behindWall = Physics.Raycast(camNotBehindWallPos, direction, Vector3.Distance(target.position, camNotBehindWallPos), obsticleMask);
+        behindWall = Physics.Raycast(target.position, -direction, Vector3.Distance(target.position, camNotBehindWallPos), obsticleMask);
 
         Debug.Log(behindWall);
 

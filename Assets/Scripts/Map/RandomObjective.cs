@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class RandomObjective : MonoBehaviour
 {
@@ -10,6 +11,13 @@ public class RandomObjective : MonoBehaviour
     GameObject Player;
     GameObject[] allObjectivesGame;
     bool doneObjective;
+    [SerializeField] GameObject Graphic;
+
+
+    [SerializeField] string showText;
+    GameObject textPanel;
+    GameObject GameManager;
+
 
     #region race objective 
     [SerializeField] GameObject racingPoint;
@@ -37,6 +45,8 @@ public class RandomObjective : MonoBehaviour
     private void Start()
     {
         ProgressBar.gameObject.SetActive(false);
+        GameManager = GameObject.FindGameObjectWithTag("GameMan");
+        textPanel = GameManager.GetComponent<SavePayerStats>().textPanel;
     }
     private void Update()
     {
@@ -94,10 +104,17 @@ public class RandomObjective : MonoBehaviour
                 loadCyl.transform.localScale = new Vector3(2 * loadingDistance, 0.01f, 2 * loadingDistance);
             }
         }
+        else if (other.CompareTag("Player"))
+        {
+            textPanel.SetActive(true);
+            textPanel.GetComponentInChildren<TextMeshProUGUI>().text = showText;
+        }
     }
 
     void CompletedObjective()
     {
+        Graphic.SetActive(false);
+
         Arrow.SetActive(false);
 
         foreach (GameObject objective in allObjectivesGame)
