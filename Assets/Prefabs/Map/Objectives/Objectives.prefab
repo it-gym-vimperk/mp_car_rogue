@@ -58,7 +58,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doingObjective: 0
   allObjectives: 2
-  Graphic: {fileID: 0}
+  Graphic: {fileID: 3884120117208001746}
   showText: Other objective is active
   racingPoint: {fileID: 3222590887655497964, guid: ddf00819a41903442a8c6625fb588d39, type: 3}
   numberOfRacingPoints: 4

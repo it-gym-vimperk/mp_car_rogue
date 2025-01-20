@@ -15,6 +15,8 @@ TagManager:
   - UpgradePanel
   - TextPanel
   - GameMan
+  - GameOver
+  - PauseMenu
   layers:
   - Default
   - TransparentFX

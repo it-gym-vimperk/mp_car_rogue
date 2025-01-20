@@ -7,6 +7,7 @@ using TMPro;
 public class RandomObjective : MonoBehaviour
 {
     public bool doingObjective = false;
+    bool thisObjective;
     [SerializeField] int allObjectives;
     GameObject Player;
     GameObject[] allObjectivesGame;
@@ -83,6 +84,7 @@ public class RandomObjective : MonoBehaviour
 
         if (other.CompareTag("Player") && !doingObjective)
         {
+            thisObjective = true;
             int randomer = Random.Range(0, allObjectives);
             doingObjective = true;
 
@@ -104,7 +106,7 @@ public class RandomObjective : MonoBehaviour
                 loadCyl.transform.localScale = new Vector3(2 * loadingDistance, 0.01f, 2 * loadingDistance);
             }
         }
-        else if (other.CompareTag("Player"))
+        else if (other.CompareTag("Player") && thisObjective)
         {
             textPanel.SetActive(true);
             textPanel.GetComponentInChildren<TextMeshProUGUI>().text = showText;
@@ -113,7 +115,6 @@ public class RandomObjective : MonoBehaviour
 
     void CompletedObjective()
     {
-        Graphic.SetActive(false);
 
         Arrow.SetActive(false);
 
@@ -127,7 +128,9 @@ public class RandomObjective : MonoBehaviour
 
     public void RaceObjective()
     {
-        if(numberOfRacingPoints > actNumOfRacingPoints)
+        Graphic.SetActive(false);
+
+        if (numberOfRacingPoints > actNumOfRacingPoints)
         {
             Vector3 randomPos = new Vector3(Random.Range(-mapSize / 2, mapSize / 2), 1, Random.Range(-mapSize / 2, mapSize / 2));
 

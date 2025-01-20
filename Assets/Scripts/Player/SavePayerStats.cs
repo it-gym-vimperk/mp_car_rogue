@@ -10,6 +10,8 @@ public class SavePayerStats : MonoBehaviour
     public static bool gameStarted = false;
     public static int[] upgradeCount;
 
+    public static float musicVolume = 1;
+
     public GameObject textPanel;
     #endregion
 

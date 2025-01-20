@@ -10,6 +10,7 @@ public class PlayerHealthManager : MonoBehaviour
     public float healthRegen;
     public float hitProtectionTime;
     public int secondChance;
+    GameObject gameOverScreen;
 
     TextMeshProUGUI healthText;
     bool canTakeDamage = true;
@@ -22,6 +23,8 @@ public class PlayerHealthManager : MonoBehaviour
         secondChance = SavePayerStats.secondChance;
 
         healthText = GameObject.FindGameObjectWithTag("HealthText").GetComponent<TextMeshProUGUI>();
+        gameOverScreen = GameObject.FindGameObjectWithTag("GameOver");
+        gameOverScreen.SetActive(false);
         playerHealth = maxHealth;
     }
     public void PlayerDecreaseHealth(float damage)
@@ -32,9 +35,9 @@ public class PlayerHealthManager : MonoBehaviour
         {
             if (secondChance <= 0)
             {
-                gameObject.SetActive(false);
                 SavePayerStats.gameStarted = false;
-                Debug.Log("LostMenu...");
+                gameOverScreen.SetActive(true);
+                gameObject.SetActive(false);
             }
             else
             {
