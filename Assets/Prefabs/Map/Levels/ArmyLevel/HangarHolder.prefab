@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6310055893773335783}
   - component: {fileID: 6387117552962053140}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: HangarHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,12 +110,24 @@ PrefabInstance:
       value: Hangar
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 12ed6d5e3936ff544bafb93f561a48c3, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 12ed6d5e3936ff544bafb93f561a48c3, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4486235997650792069, guid: 12ed6d5e3936ff544bafb93f561a48c3, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4486235997650792069, guid: 12ed6d5e3936ff544bafb93f561a48c3, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357978153145520119, guid: 12ed6d5e3936ff544bafb93f561a48c3, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8357978153145520119, guid: 12ed6d5e3936ff544bafb93f561a48c3, type: 3}
       propertyPath: m_StaticEditorFlags

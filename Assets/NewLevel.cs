@@ -5,8 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class NewLevel : MonoBehaviour
 {
+    [SerializeField] bool loadToMenu = false;
+    [SerializeField] GameObject gameMan;
+
+    private void Start()
+    {
+        gameMan = GameObject.FindGameObjectWithTag("GameMan");
+    }
+
     private void OnDestroy()
-    {   
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);       
+    {
+        gameMan.GetComponent<SavePayerStats>().sceneTransitionPanel.SetActive(true);
     }
 }

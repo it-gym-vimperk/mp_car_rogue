@@ -57,7 +57,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bossFight: {fileID: 0}
   bossSpawnPos: {fileID: 0}
-  showText: 
+  showText: You havent gotten all objectives yet
   GameManager: {fileID: 0}
   textPanel: {fileID: 0}
 --- !u!136 &5105223654549440703

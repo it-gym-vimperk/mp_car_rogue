@@ -10,6 +10,8 @@ public class SceneManagement : MonoBehaviour
 
     private void Start()
     {
+        paused = false;
+        Time.timeScale = 1;
         PauseMenu = GameObject.FindGameObjectWithTag("PauseMenu");
         if(PauseMenu != null)
         {
@@ -32,12 +34,10 @@ public class SceneManagement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape) && PauseMenu != null && !paused)
         {
-            paused = true;
             Pause();
         }
         else if(Input.GetKeyDown(KeyCode.Escape) && PauseMenu != null && paused)
         {
-            paused = false;
             UnPause();
         }
 
@@ -45,13 +45,14 @@ public class SceneManagement : MonoBehaviour
 
     void Pause()
     {
+        paused = true;
         Time.timeScale = 0;
-
         PauseMenu.SetActive(true);
     }
 
     public void UnPause()
     {
+        paused = false;
         Time.timeScale = 1f;
         PauseMenu.SetActive(false);
     }

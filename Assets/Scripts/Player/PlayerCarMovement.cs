@@ -78,7 +78,7 @@ public class PlayerCarMovement : MonoBehaviour
                 speed = Mathf.Clamp(speed += speedAdder * Time.fixedDeltaTime, 0, maxSpeed); //speed nikdy nepøekroèí maxspeed
             }
         }
-        //hráè již nemaèká klávesud, takže docházi k postupnému spomalení auta
+        //hráè již nemaèká klávesu, takže docházi k postupnému spomalení auta
         else if (speed > 0 && grounded)  
         {
             speed = Mathf.Clamp(speed -= speedAdder * Time.fixedDeltaTime, 0, maxSpeed);
@@ -90,8 +90,8 @@ public class PlayerCarMovement : MonoBehaviour
         }
 
         //pøi naražení do zdí, resetuje rychlost na malé èíslo, aby mohl hráè vycouvat
-        if ((Physics.CheckSphere(transform.position + transform.forward, 0.9f, obsticleMask) ||
-           Physics.CheckSphere(transform.position - transform.forward, 0.9f, obsticleMask)))
+        if ((Physics.CheckSphere(transform.position + transform.forward, 0.7f, obsticleMask) ||
+           Physics.CheckSphere(transform.position - transform.forward, 0.7f, obsticleMask)))
         {
             speed = 2;
             moveVector = z * transform.forward;

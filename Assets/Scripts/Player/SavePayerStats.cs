@@ -10,9 +10,8 @@ public class SavePayerStats : MonoBehaviour
     public static bool gameStarted = false;
     public static int[] upgradeCount;
 
-    public static float musicVolume = 1;
-
     public GameObject textPanel;
+    public GameObject sceneTransitionPanel;
     #endregion
 
     #region Stats
@@ -66,6 +65,7 @@ public class SavePayerStats : MonoBehaviour
     private void Awake()
     {
         textPanel = GameObject.FindGameObjectWithTag("TextPanel");
+        sceneTransitionPanel = GameObject.FindGameObjectWithTag("SceneExit");
         moneyText = GameObject.FindGameObjectWithTag("MoneyText").GetComponent<TextMeshProUGUI>();
 
         if (!gameStarted)
@@ -77,8 +77,9 @@ public class SavePayerStats : MonoBehaviour
     private void Start()
     {
         PlayerCanvas = GameObject.FindGameObjectWithTag("UpgradePanel");
+        sceneTransitionPanel.SetActive(false);
 
-        for(int i = 0; i < PlayerCanvas.transform.childCount; i++)
+        for (int i = 0; i < PlayerCanvas.transform.childCount; i++)
         {
             upgradeImages.Add(PlayerCanvas.transform.GetChild(i).gameObject);
         }

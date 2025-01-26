@@ -1,18 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MusicManager : MonoBehaviour
 {
     [SerializeField] AudioClip[] clips;
     AudioSource musicSource;
 
-    float volume;
+    public static float volume = 0.5f;
     int lastClip;
 
     void Start()
     {
-        volume = SavePayerStats.musicVolume;
         musicSource = GetComponent<AudioSource>();
 
         ChooseNewMusic();
@@ -21,6 +21,7 @@ public class MusicManager : MonoBehaviour
 
     void Update()
     {
+        Debug.Log(volume);
         musicSource.volume = volume;
 
         if (!musicSource.isPlaying)
@@ -47,4 +48,9 @@ public class MusicManager : MonoBehaviour
         }
 
    }
+
+    public void ChangedMusicVol(Slider musicSlider)
+    {
+        volume = musicSlider.value;
+    }
 }

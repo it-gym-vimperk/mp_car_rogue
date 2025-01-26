@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8535585499308458892}
   - component: {fileID: 7673857677097564041}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: FenceHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,6 +98,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7953870901001601376, guid: 8386beafa01d0294db7c8175e8c12841, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -7953870901001601376, guid: 8386beafa01d0294db7c8175e8c12841, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -114,8 +118,16 @@ PrefabInstance:
       value: Fence
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8386beafa01d0294db7c8175e8c12841, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8386beafa01d0294db7c8175e8c12841, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 1094559010302358929, guid: 8386beafa01d0294db7c8175e8c12841, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1094559010302358929, guid: 8386beafa01d0294db7c8175e8c12841, type: 3}
       propertyPath: m_StaticEditorFlags

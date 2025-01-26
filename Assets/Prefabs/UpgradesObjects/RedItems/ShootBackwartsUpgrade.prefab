@@ -111,7 +111,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ccc1d696149a9d4c8e16331efaf2960, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  showText: You can shoot backwards
+  percentageChange: 0.2
+  showText: You can shoot backwards and you regenerate faster
 --- !u!1001 &1133803121602182713
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -91,7 +91,7 @@ public class RandomObjective : MonoBehaviour
             Arrow = other.transform.GetChild(2).gameObject;
             Debug.Log(randomer);
 
-            if (randomer == 0)
+            if (randomer == 1)
             {
                 RaceObjective();
             }
@@ -106,7 +106,7 @@ public class RandomObjective : MonoBehaviour
                 loadCyl.transform.localScale = new Vector3(2 * loadingDistance, 0.01f, 2 * loadingDistance);
             }
         }
-        else if (other.CompareTag("Player") && thisObjective)
+        else if (other.CompareTag("Player") && !thisObjective)
         {
             textPanel.SetActive(true);
             textPanel.GetComponentInChildren<TextMeshProUGUI>().text = showText;

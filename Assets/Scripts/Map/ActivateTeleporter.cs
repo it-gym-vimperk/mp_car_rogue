@@ -14,6 +14,7 @@ public class ActivateTeleporter : MonoBehaviour
 
     GameObject[] objectives;
     bool canBeActivated = false;
+    bool hasBeenActivated;
     void Start()
     {
         InvokeRepeating("CheckForObjectives", 10f, 1f);
@@ -36,9 +37,10 @@ public class ActivateTeleporter : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player") && canBeActivated)
+        if(other.CompareTag("Player") && canBeActivated && !hasBeenActivated)
         {
             Instantiate(bossFight, bossSpawnPos.position, Quaternion.identity);
+            hasBeenActivated = true;
         }
         else if(other.CompareTag("Player"))
         {
