@@ -18,6 +18,9 @@ TagManager:
   - GameOver
   - PauseMenu
   - SceneExit
+  - ObjectiveText
+  - ActivateBossText
+  - DefeatBossText
   layers:
   - Default
   - TransparentFX

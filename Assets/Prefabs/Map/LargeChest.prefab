@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 315f916ac989fa045b3f203a1ca42d63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemChances: 210000004200000064000000
+  itemChances: ffffffff0000000032000000
   priceToOpen: 50
   insItems:
   - {fileID: 1726500787284414439, guid: d8700f64e11735841bcd6cf2b107564e, type: 3}
