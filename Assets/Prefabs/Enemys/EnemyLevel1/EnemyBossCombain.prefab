@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 217940283657440367}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0, z: 1}
+  m_LocalPosition: {x: 0.3, y: 0, z: 0.61800003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -55,7 +55,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 217940283826846554}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.61800003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -86,7 +86,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 217940283858983484}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.25, y: 0, z: 1}
+  m_LocalPosition: {x: 0.15, y: 0, z: 0.618}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -186,7 +186,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 217940284571363943}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.25, y: 0, z: 1}
+  m_LocalPosition: {x: -0.15, y: 0, z: 0.61800003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -378,6 +378,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
   Enemy: {fileID: 217940285489272945}
+  maxDistance: 6
 --- !u!1 &217940285362322701
 GameObject:
   m_ObjectHideFlags: 0
@@ -402,7 +403,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 217940285362322701}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.5, y: 0, z: 1}
+  m_LocalPosition: {x: -0.3, y: 0, z: 0.61800003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -564,7 +565,7 @@ MonoBehaviour:
   Player: {fileID: 0}
   leftTurn: {fileID: 217940285636472703}
   rightTurn: {fileID: 217940285265374246}
-  rotateSpeed: 175
+  rotateSpeed: 70
   speedAdder: 10
   maxSpeed: 20
   rayAimers:
@@ -573,13 +574,13 @@ MonoBehaviour:
   - {fileID: 217940283826846555}
   - {fileID: 217940284571363928}
   - {fileID: 217940285362322702}
-  rayCheckDis: 9
+  rayCheckDis: 10
   obsticleMask:
     serializedVersion: 2
     m_Bits: 8
   obsticle: 0
   dashingCooldown: 5
-  dashLenght: 2
+  dashLenght: 0.5
   dashDis: 20
   dashAngle: 30
 --- !u!114 &4659813277365440562
@@ -609,6 +610,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loadToMenu: 0
+  gameMan: {fileID: 0}
 --- !u!1 &217940285636472702
 GameObject:
   m_ObjectHideFlags: 0

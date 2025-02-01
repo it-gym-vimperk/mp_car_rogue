@@ -7,6 +7,7 @@ public class EnemyCarMovementNavMesh : MonoBehaviour
 {
     [SerializeField] Transform Player;
     [SerializeField] Transform Enemy;
+    [SerializeField] int maxDistance = 15;
     NavMeshAgent agent;
 
     void Start()
@@ -17,7 +18,7 @@ public class EnemyCarMovementNavMesh : MonoBehaviour
 
     void Update()
     {
-        if(Vector3.Distance(Enemy.transform.position, transform.position) <= 15)
+        if(Vector3.Distance(Enemy.transform.position, transform.position) <= maxDistance)
         {
             agent.SetDestination(Player.position);
             agent.stoppingDistance = 0;
@@ -26,7 +27,7 @@ public class EnemyCarMovementNavMesh : MonoBehaviour
         else
         {
             agent.SetDestination(Enemy.transform.position);
-            agent.stoppingDistance = 15;
+            agent.stoppingDistance = maxDistance;
         }
     }
 }

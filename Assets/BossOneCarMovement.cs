@@ -31,7 +31,10 @@ public class BossOneCarMovement : MonoBehaviour
     [SerializeField] float dashDis;
     [SerializeField] float dashAngle;
     float dashTimer;
-    bool dashing;
+    bool dashingAngel;
+    bool canDash = true;
+    bool dashing = false;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -44,7 +47,6 @@ public class BossOneCarMovement : MonoBehaviour
 
         if (!obsticle)
         {
-            CheckForObsticales();
             Vector3 newVelocity = transform.forward * speed;
             newVelocity.y = rb.velocity.y;
             rb.velocity = newVelocity;
@@ -61,10 +63,10 @@ public class BossOneCarMovement : MonoBehaviour
 
             if (Vector3.Distance(Player.position, transform.position) <= dashDis && Vector3.Angle(transform.forward, Player.transform.position - transform.position) < dashAngle)
             {
-                dashing = true;
+                dashingAngel = true;
             }
 
-            if (dashing)
+            if (dashingAngel && canDash)
             {
                 DashingAttack();
             }
@@ -72,21 +74,21 @@ public class BossOneCarMovement : MonoBehaviour
         else
         {
             StartCoroutine(MoveBack());
-            dashing = false;
 
-            speed = maxSpeed / 2;
+            dashingAngel = false;
 
-            Vector3 newVelocity = -transform.forward * speed;
+            Vector3 newVelocity = -transform.forward * maxSpeed;
             newVelocity.y = rb.velocity.y;
             rb.velocity = newVelocity;
+            rb.angularVelocity = new Vector3(0, 0, 0);
 
-            if (!Physics.Raycast(transform.position, -transform.forward, rayCheckDis, obsticleMask))
+            if (!Physics.Raycast(transform.position, -transform.forward, rayCheckDis/2, obsticleMask))
             {
-                if (!Physics.Raycast(transform.position, transform.right, rayCheckDis * 2, obsticleMask))
+                if (!Physics.Raycast(transform.position, transform.right, rayCheckDis/2, obsticleMask))
                 {
                     TurnRight(rotateSpeed * 1.5f);
                 }
-                else if (!Physics.Raycast(transform.position, -transform.right, rayCheckDis * 2, obsticleMask))
+                else if (!Physics.Raycast(transform.position, -transform.right, rayCheckDis/2, obsticleMask))
                 {
                     TurnLeft(rotateSpeed * 1.5f);
                 }
@@ -117,11 +119,11 @@ public class BossOneCarMovement : MonoBehaviour
         float leftDistance = Vector3.Distance(Target.transform.position, leftTurn.position);
 
 
-        if (rightDistance < leftDistance)
+        if (rightDistance + 0.1f < leftDistance)
         {
             TurnLeft(rotateSpeed);
         }
-        else if (rightDistance > leftDistance)
+        else if (rightDistance > leftDistance + 0.1f)
         {
             TurnRight(rotateSpeed);
         }
@@ -147,24 +149,25 @@ public class BossOneCarMovement : MonoBehaviour
 
     void DashingAttack()
     {
-        Debug.Log("Dashing " + speed);
-
         speed = Mathf.Clamp(speed += speedAdder * 10 * Time.fixedDeltaTime, 0, maxSpeed * 7);
 
         dashTimer += 1 * Time.fixedDeltaTime;
 
-        if(dashTimer > dashLenght)
+        dashing = true;
+
+        if (dashTimer > dashLenght)
         {
             dashTimer = 0;
+            canDash = false;
             dashing = false;
             StartCoroutine(renewDash());
         }
     }
-    
+
     IEnumerator renewDash()
     {
         yield return new WaitForSeconds(dashingCooldown);
 
-        dashing = true;
+        canDash = true;
     }
 }

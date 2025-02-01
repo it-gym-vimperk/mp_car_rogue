@@ -29,9 +29,14 @@ public class PlayerHealthManager : MonoBehaviour
     }
     public void PlayerDecreaseHealth(float damage)
     {
-        playerHealth -= damage;
+        if (canTakeDamage)
+        {
+            playerHealth -= damage;
+            canTakeDamage = false;
+            StartCoroutine(HitProtection());
+        }
 
-        if(playerHealth <= 0 && canTakeDamage)
+        if(playerHealth <= 0)
         {
             if (secondChance <= 0)
             {
@@ -47,9 +52,6 @@ public class PlayerHealthManager : MonoBehaviour
                 StartCoroutine(SpawnProtection());
 
             }
-
-            canTakeDamage = false;
-            StartCoroutine(HitProtection());
         }
     }
 
