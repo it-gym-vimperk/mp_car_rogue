@@ -45,10 +45,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   money: 0
-  maxMoneyPerSecond: 0.5
+  moneyPerSecond: 0
+  plusMoneyPerSecond: 0
+  maxMoneyPerSecond: 1
   enemyesToSpawn:
   - {fileID: 4876480254042994953, guid: a7e82dd9afc459d4096be210b35b94fa, type: 3}
   - {fileID: 7209833951836993904, guid: 4f6535cf86568f24ea7e8b04b30e8f9c, type: 3}
   enemyPrices: 0200000003000000
   enemyCap: 20
+  obsticleMask:
+    serializedVersion: 2
+    m_Bits: 0
   spawnDis: 20

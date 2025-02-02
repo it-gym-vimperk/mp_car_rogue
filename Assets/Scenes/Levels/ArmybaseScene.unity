@@ -19201,7 +19201,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6988557346421015860, guid: a07ed74351f7c124eb1cf5a9ffa91cea, type: 3}
       propertyPath: setUpMoney
-      value: 30
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 6988557346421015860, guid: a07ed74351f7c124eb1cf5a9ffa91cea, type: 3}
       propertyPath: groundMask.m_Bits
@@ -33708,7 +33708,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7339935061572576286, guid: cd80deb9ecf3aa44db3e7166d3c24838, type: 3}
       propertyPath: maxMoneyPerSecond
-      value: 0.75
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 7339935061572576286, guid: cd80deb9ecf3aa44db3e7166d3c24838, type: 3}
       propertyPath: plusMoneyPerSecond

@@ -226,6 +226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a52c4f482cd4942499f6bfa44d591c76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  setInactiveOnStart: 1
 --- !u!95 &6746015100753980839
 Animator:
   serializedVersion: 5
@@ -2612,6 +2613,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a52c4f482cd4942499f6bfa44d591c76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  setInactiveOnStart: 0
 --- !u!1 &4865586796853117548
 GameObject:
   m_ObjectHideFlags: 0
