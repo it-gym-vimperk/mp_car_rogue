@@ -13,6 +13,7 @@ public class PlayerHealthManager : MonoBehaviour
     GameObject gameOverScreen;
 
     TextMeshProUGUI healthText;
+    GameObject hitPanel;
     bool canTakeDamage = true;
 
     private void Start()
@@ -25,12 +26,17 @@ public class PlayerHealthManager : MonoBehaviour
         healthText = GameObject.FindGameObjectWithTag("HealthText").GetComponent<TextMeshProUGUI>();
         gameOverScreen = GameObject.FindGameObjectWithTag("GameOver");
         gameOverScreen.SetActive(false);
+
+        hitPanel = GameObject.FindGameObjectWithTag("HitPanel");
+        hitPanel.SetActive(false);
         playerHealth = maxHealth;
+
     }
     public void PlayerDecreaseHealth(float damage)
     {
         if (canTakeDamage)
         {
+            hitPanel.SetActive(true);
             playerHealth -= damage;
             canTakeDamage = false;
             StartCoroutine(HitProtection());

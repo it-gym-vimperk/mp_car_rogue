@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerCarMovement : MonoBehaviour
@@ -57,7 +55,7 @@ public class PlayerCarMovement : MonoBehaviour
         x = Input.GetAxis("Horizontal");
         z = Input.GetAxis("Vertical");
 
-        //pokud hráè maèká nìjakou klávesu, a je na zemi, tak se auto rozjede
+        //pokud hráè maèká klávesu W, nebo S a je na zemi, tak se auto rozjede
         if (z != 0 && grounded)
         {
             Vector3 comparingVec = new Vector3(rb.velocity.x, 0, rb.velocity.z);
@@ -93,7 +91,7 @@ public class PlayerCarMovement : MonoBehaviour
         if ((Physics.CheckSphere(transform.position + transform.forward, 0.7f, obsticleMask) ||
            Physics.CheckSphere(transform.position - transform.forward, 0.7f, obsticleMask)))
         {
-            speed = 2;
+            speed = 6;
             moveVector = z * transform.forward;
         }
 
@@ -135,7 +133,7 @@ public class PlayerCarMovement : MonoBehaviour
             {
                 speed -= speedAdder *0.25f * Time.fixedDeltaTime;
 
-                if (Mathf.RoundToInt(speed) > 2 && grounded)
+                if (Mathf.RoundToInt(speed) > 2)
                 {
                     transform.Rotate(0, x * rotateSpeed *driftRotationMultiplier* Time.fixedDeltaTime, 0); //samotné otaèení auta pøi driftu
                 }

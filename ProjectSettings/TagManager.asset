@@ -21,6 +21,7 @@ TagManager:
   - ObjectiveText
   - ActivateBossText
   - DefeatBossText
+  - HitPanel
   layers:
   - Default
   - TransparentFX
