@@ -22,6 +22,7 @@ TagManager:
   - ActivateBossText
   - DefeatBossText
   - HitPanel
+  - HealthSlider
   layers:
   - Default
   - TransparentFX

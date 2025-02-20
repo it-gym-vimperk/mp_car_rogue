@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class PlayerHealthManager : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class PlayerHealthManager : MonoBehaviour
     GameObject gameOverScreen;
 
     TextMeshProUGUI healthText;
+    [SerializeField] Slider healthSlider;
     GameObject hitPanel;
     bool canTakeDamage = true;
 
@@ -24,6 +26,9 @@ public class PlayerHealthManager : MonoBehaviour
         secondChance = SavePayerStats.secondChance;
 
         healthText = GameObject.FindGameObjectWithTag("HealthText").GetComponent<TextMeshProUGUI>();
+        healthSlider = GameObject.FindGameObjectWithTag("HealthSlider").GetComponent<Slider>();
+        healthSlider.maxValue = maxHealth;
+
         gameOverScreen = GameObject.FindGameObjectWithTag("GameOver");
         gameOverScreen.SetActive(false);
 
@@ -64,8 +69,10 @@ public class PlayerHealthManager : MonoBehaviour
     private void Update()
     {
         healthText.text = (playerHealth * 10).ToString("0");
+        healthSlider.maxValue = maxHealth;
+        healthSlider.value = playerHealth;
 
-        if(playerHealth < maxHealth)
+        if (playerHealth < maxHealth)
         {
             playerHealth += healthRegen * Time.deltaTime;
         }
