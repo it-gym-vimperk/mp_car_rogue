@@ -101,15 +101,16 @@ public class EnemyCarMovement : MonoBehaviour
         }
     }
 
-    void TurnLeft(float rotateSpeedVoid)
+    void TurnLeft(float rotateSpeed)
     {
-        transform.Rotate(0, rotateSpeedVoid * Time.fixedDeltaTime, 0);
+        transform.Rotate(0, rotateSpeed * Time.fixedDeltaTime, 0);
     }
 
-    void TurnRight(float rotateSpeedVoid)
+    void TurnRight(float rotateSpeed)
     {
-        transform.Rotate(0, -rotateSpeedVoid * Time.fixedDeltaTime, 0);
+        transform.Rotate(0, -rotateSpeed * Time.fixedDeltaTime, 0);
     }
+
 
     IEnumerator MoveBack()
     {

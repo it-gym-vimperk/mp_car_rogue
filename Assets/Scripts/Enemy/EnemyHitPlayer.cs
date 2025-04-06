@@ -30,5 +30,6 @@ public class EnemyHitPlayer : MonoBehaviour
         yield return new WaitForSeconds(cantHitTime);
 
         canDamage = true;
+        canDamage = true;
     }
 }

@@ -65,10 +65,13 @@ public class PlayerShoot : MonoBehaviour
 
     void GiveBulletStats(GameObject bullet, Vector3 shootVector)
     {
+        PlayerBulletScript bulletScript = bullet.GetComponent<PlayerBulletScript>();
+
         bullet.transform.localScale = bullet.transform.localScale * bulletSizeMultiplyer;
-        bullet.GetComponent<PlayerBulletScript>().damage = damage;
-        bullet.GetComponent<PlayerBulletScript>().maxGoThroughEnemy = maxGoThroughEnemy;
-        bullet.GetComponent<PlayerBulletScript>().fireDuration = fireDuration;
         bullet.GetComponent<Rigidbody>().AddForce(shootVector.normalized * bulletSpeed);
+
+        bulletScript.damage = damage;
+        bulletScript.maxGoThroughEnemy = maxGoThroughEnemy;
+        bulletScript.fireDuration = fireDuration;
     }
 }

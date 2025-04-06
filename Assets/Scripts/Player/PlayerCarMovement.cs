@@ -79,7 +79,8 @@ public class PlayerCarMovement : MonoBehaviour
         //hráè již nemaèká klávesu, takže docházi k postupnému spomalení auta
         else if (speed > 0 && grounded)  
         {
-            speed = Mathf.Clamp(speed -= speedAdder * Time.fixedDeltaTime, 0, maxSpeed);
+            speed -= speedAdder * Time.fixedDeltaTime;
+            speed = Mathf.Clamp(speed, 0, maxSpeed);
         }
         //spomalení auta ve vzduchu
         else if (!grounded)
@@ -101,7 +102,7 @@ public class PlayerCarMovement : MonoBehaviour
         rb.velocity = newVelocity;
 
         //otaèení auta pouze pøi jízdì
-        if (Mathf.RoundToInt(speed) > 2 && grounded && !drifting)
+        if (speed > 2 && grounded && !drifting)
         {
             transform.Rotate(0, x * rotateSpeed * Time.fixedDeltaTime, 0); //samotné otaèení auta
         }
@@ -133,7 +134,7 @@ public class PlayerCarMovement : MonoBehaviour
             {
                 speed -= speedAdder *0.25f * Time.fixedDeltaTime;
 
-                if (Mathf.RoundToInt(speed) > 2)
+                if (speed > 2)
                 {
                     transform.Rotate(0, x * rotateSpeed *driftRotationMultiplier* Time.fixedDeltaTime, 0); //samotné otaèení auta pøi driftu
                 }
